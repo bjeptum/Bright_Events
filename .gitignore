@@ -1,0 +1,15 @@
+# Ignore environment variable files
+.env
+
+# Ignore credential files
+config/secrets.yml
+
+# Ignore database files
+*.sqlite3
+*.db
+
+# Ignore log files
+*.log
+
+# Ignore directories
+/venv
