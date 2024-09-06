@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Details</title>
+</head>
+<body>
+    <h1>{{ event.title }}</h1>
+    <p>Date: {{ event.date.strftime('%Y-%m-%d') }}</p>
+    <p>Location: {{ event.location }}</p>
+    <p>Category: {{ event.category.name }}</p>
+
+    <h2>RSVP</h2>
+    <form action="{{ url_for('events.rsvp_event', event_id=event.id) }}" method="post">
+        <input type="email" name="email" placeholder="Your Email" required>
+        <button type="submit">RSVP</button>
+    </form>
+
+    <h2>Attendees</h2>
+    <ul>
+        {% for rsvp in event.rsvps %}
+            <li>{{ rsvp.attendee.user.username }} ({{ rsvp.attendee.user.email }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

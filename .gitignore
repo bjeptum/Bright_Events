@@ -13,3 +13,18 @@ config/secrets.yml
 
 # Ignore directories
 /venv
+.venv/
+ENV/
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+/apienv
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
