@@ -17,7 +17,7 @@ The project is entirely for educational purposes with no intention to release it
 - Users can view who will be attending their event
 - Users can search for events based on event location or event category
 
-## Guide ro running the Flask Application
+## Guide to running the Flask Application
 
 1.  Clone the repository
     `
