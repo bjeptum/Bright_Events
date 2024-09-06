@@ -17,3 +17,16 @@ The project is entirely for educational purposes with no intention to release it
 - Users can view who will be attending their event
 - Users can search for events based on event location or event category
 
+## Guide ro running the Flask Application
+
+1. - Clone the repository
+    `
+    git clone git@github.com:bjeptum/Bright_Events.git
+    `
+2. - Navigate to the project directory 
+    `
+    cd <project-directory>
+
+
+3. - 
+
