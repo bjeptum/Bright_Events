@@ -1,6 +1,9 @@
 # Ignore environment variable files
 .env
 
+# Ignore Python cache files
+__pycache__/
+
 # Ignore credential files
 config/secrets.yml
 

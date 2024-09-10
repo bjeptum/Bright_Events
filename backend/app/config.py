@@ -8,13 +8,13 @@ class Config(object):
 class DevelopmentConfig(Config):
     """ Development configuration"""
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.getenv('DEV_DATABASE_URI', 'sqlite:///dev_db.sqlite')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DEV_DATABASE_URI', 'sqlite3:///dev_db.sqlite')
 
 class TestingConfig(Config):
     """ Testing configuration"""
     TESTING = True
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.getenv('TEST_DATABASE_URI', 'sqlite:///test_db.sqlite')
+    SQLALCHEMY_DATABASE_URI = os.getenv('TEST_DATABASE_URI', 'sqlite3:///test_db.sqlite')
     WTF_CSRF_ENABLED = False
 
 class ProductionConfig(Config):

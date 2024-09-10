@@ -46,7 +46,7 @@ def get_event(event_id):
         'category': event.category.name
     })
 
-@events_bp.route('/api/events/<int:event_id>', methods=['PUT'])
+@events_bp.route('/api/events/<int:event_id>', methods=['POST'])
 @login_required
 def update_event(event_id):
     data = request.get_json()

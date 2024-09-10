@@ -5,8 +5,9 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from app import  db
 
-db = SQLAlchemy()
+# db = SQLAlchemy()
 
 class User(db.Model,UserMixin):
     """ Defines users"""
@@ -16,8 +17,8 @@ class User(db.Model,UserMixin):
     username = db.Column(db.String(50), unique=True, nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
-    organizer = db.relationship('Organizer', backref='user', uselist=False)
-    attendee = db.relationship('Attendee', backref='user', uselist=False)
+    organizer = db.relationship('Organizer', backref='users', uselist=False)
+    attendee = db.relationship('Attendee', backref='users', uselist=False)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -31,7 +32,7 @@ class Organizer(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    events = db.relationship('Event', backref='organizer', lazy=True)
+    events = db.relationship('Event', backref='organizers', lazy=True)
 
 
 class Attendee(db.Model):
@@ -39,7 +40,7 @@ class Attendee(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    rsvps = db.relationship('RSVP', backref='attendee', lazy=True)
+    rsvps = db.relationship('RSVP', backref='attendees', lazy=True)
 
 
 class Event(db.Model):
@@ -51,7 +52,7 @@ class Event(db.Model):
     location = db.Column(db.String(100), nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey('event_categories.id'), nullable=False)
     organizer_id = db.Column(db.Integer, db.ForeignKey('organizers.id'), nullable=False)
-    rsvps = db.relationship('RSVP', backref='event', lazy=True)
+    rsvps = db.relationship('RSVP', backref='events', lazy=True)
     category = db.relationship('EventCategory', backref='events')
 
 
@@ -61,8 +62,6 @@ class EventCategory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True, nullable=False)
     description = db.Column(db.String(200))
-
-    events = db.relationship('Event', backref='category', lazy=True)
 
 
 class RSVP(db.Model):
