@@ -19,20 +19,29 @@ The project is entirely for educational purposes with no intention to release it
 
 ## Guide to running the Flask Application
 
+    #### Ubuntu Terminal:
+
 1.  Clone the repository
-    `
+`
     git clone git@github.com:bjeptum/Bright_Events.git
     `
 2. Navigate to the project directory 
-    `
-    cd <project-directory>
+`
+    cd Bright_Events/backend
     `
 3. Setup a virtual environment
+`
+    python3 -m venv myenv
+    source myenv/bin/activate
+    `
+    /* Note: to deactivate the environment type deactivate */
 4. Install dependencies
+
    `
    pip install -r requirements.txt
    `
 6. Set Up Environment Variables
+
    - Create a .env file in the root directory
    - Add required enviroment variables for example:
   
@@ -43,8 +52,9 @@ The project is entirely for educational purposes with no intention to release it
   SECRET_KEY=your_secret_key
   `
 7. Initialize the database
-  `flask shell`
+
+  `python3 -m flask shell`
 8. Run the Flask application
  `
- flask run
+ python3 -m flask run
  `
