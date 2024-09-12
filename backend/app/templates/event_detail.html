@@ -2,25 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Event Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ event.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>{{ event.title }}</h1>
-    <p>Date: {{ event.date.strftime('%Y-%m-%d') }}</p>
-    <p>Location: {{ event.location }}</p>
-    <p>Category: {{ event.category.name }}</p>
+    <header>
+        <h1>{{ event.title }}</h1>
+        <p>{{ event.date.strftime('%B %d, %Y') }} at {{ event.time.strftime('%I:%M %p') }}</p>
+    </header>
+    
+    <section class="event-details">
+        <h2>Event Details</h2>
+        <p>{{ event.description }}</p>
+        <p>Location: {{ event.location }}</p>
+        
+        <h3>RSVPs</h3>
+        <ul>
+            {% for rsvp in event.rsvps %}
+                <li>{{ rsvp.user.username }} - {{ rsvp.created_at.strftime('%B %d, %Y %I:%M %p') }}</li>
+            {% empty %}
+                <li>No RSVPs yet.</li>
+            {% endfor %}
+        </ul>
+        
+        <h3>RSVP</h3>
+        <form action="{{ url_for('rsvp', event_id=event.id) }}" method="post">
+            <input type="hidden" name="_method" value="POST">
+            <button type="submit">RSVP</button>
+        </form>
+    </section>
 
-    <h2>RSVP</h2>
-    <form action="{{ url_for('events.rsvp_event', event_id=event.id) }}" method="post">
-        <input type="email" name="email" placeholder="Your Email" required>
-        <button type="submit">RSVP</button>
-    </form>
+    <footer>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </footer>
 
-    <h2>Attendees</h2>
-    <ul>
-        {% for rsvp in event.rsvps %}
-            <li>{{ rsvp.attendee.user.username }} ({{ rsvp.attendee.user.email }})</li>
-        {% endfor %}
-    </ul>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>

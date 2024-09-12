@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from flask_login import login_user, logout_user, login_required, current_user
+from flask_login import LoginManager
+from flask_login import login_user, logout_user, login_required
 from app.models import db, User
 from ..utils import hash_password, verify_password
 
@@ -38,7 +39,7 @@ def login():
         user = User.query.filter_by(email=email).first()
         
         if user and verify_password(password, user.password_hash):
-            login_user(user)
+            login_user(user, remember=True)
             return redirect(url_for('main.index'))
         flash('Invalid credentials')
     return render_template('login.html')

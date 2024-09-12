@@ -2,20 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Event List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Events</h1>
-    <form action="{{ url_for('events.search_events') }}" method="get">
-        <input type="text" name="location" placeholder="Location">
-        <input type="text" name="category" placeholder="Category">
-        <button type="submit">Search</button>
-    </form>
+    <header>
+        <h1>Events List</h1>
+    </header>
 
-    <ul>
-        {% for event in events %}
-            <li><a href="{{ url_for('events.view_event', event_id=event.id) }}">{{ event.title }}</a></li>
-        {% endfor %}
-    </ul>
+    <section class="search">
+        <form action="{{ url_for('event_list') }}" method="get">
+            <input type="text" name="search" placeholder="Search events..." value="{{ request.args.get('search', '') }}">
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <section class="event-list">
+        <ul>
+            {% for event in events %}
+                <li>
+                    <a href="{{ url_for('event_detail', event_id=event.id) }}">{{ event.title }}</a>
+                    <p>{{ event.date.strftime('%B %d, %Y') }}</p>
+                </li>
+            {% empty %}
+                <li>No events found.</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <footer>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>

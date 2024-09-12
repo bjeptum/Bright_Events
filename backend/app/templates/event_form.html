@@ -2,16 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create/Update Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>{{ 'Create' if not event else 'Update' }} Event</h1>
-    <form action="{{ url_for('events.edit_event', event_id=event.id) if event else url_for('events.create_event') }}" method="post">
-        <input type="text" name="title" value="{{ event.title if event else '' }}" placeholder="Event Title" required>
-        <input type="date" name="date" value="{{ event.date.strftime('%Y-%m-%d') if event else '' }}" required>
-        <input type="text" name="location" value="{{ event.location if event else '' }}" placeholder="Location" required>
-        <input type="text" name="category" value="{{ event.category.name if event else '' }}" placeholder="Category" required>
-        <button type="submit">{{ 'Create' if not event else 'Update' }}</button>
-    </form>
+    <header>
+        <h1>{{ 'Create' if not event else 'Update' }} Event</h1>
+    </header>
+
+    <section class="event-form">
+        <form action="{{ form_action }}" method="post">
+            <label for="title">Event Title:</label>
+            <input type="text" id="title" name="title" value="{{ event.title if event else '' }}" required>
+
+            <label for="date">Event Date:</label>
+            <input type="date" id="date" name="date" value="{{ event.date.strftime('%Y-%m-%d') if event else '' }}" required>
+
+            <label for="time">Event Time:</label>
+            <input type="time" id="time" name="time" value="{{ event.time.strftime('%H:%M') if event else '' }}" required>
+
+            <label for="location">Event Location:</label>
+            <input type="text" id="location" name="location" value="{{ event.location if event else '' }}" required>
+
+            <label for="description">Event Description:</label>
+            <textarea id="description" name="description" required>{{ event.description if event else '' }}</textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
