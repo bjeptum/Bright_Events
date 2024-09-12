@@ -35,12 +35,13 @@ The project is entirely for educational purposes with no intention to release it
     source myenv/bin/activate
     `
     /* Note: to deactivate the environment type deactivate */
+   
 4. Install dependencies
 
    `
    pip install -r requirements.txt
    `
-6. Set Up Environment Variables
+5. Set Up Environment Variables
 
    - Create a .env file in the root directory
    - Add required enviroment variables for example:
@@ -51,10 +52,18 @@ The project is entirely for educational purposes with no intention to release it
   DATABASE_URL=sqlite:///app.db
   SECRET_KEY=your_secret_key
   `
-7. Initialize the database
+  
+6. Initialize the database
 
   `python3 -m flask shell`
-8. Run the Flask application
+  
+7. Run the Flask application
+   
  `
  python3 -m flask run
  `
+ 
+8. Navigate to your web browser 
+`
+http://127.0.0.1:5000
+`
