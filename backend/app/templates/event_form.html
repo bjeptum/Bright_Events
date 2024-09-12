@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create/Update Event</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='events.css') }}">
 </head>
 <body>
     <header>
@@ -12,28 +12,26 @@
     </header>
 
     <section class="event-form">
-        <form action="{{ form_action }}" method="post">
+        <form action="{{ url_for('events.create_event_form') }}" method="post">
+            {{ form.hidden_tag() }}
             <label for="title">Event Title:</label>
-            <input type="text" id="title" name="title" value="{{ event.title if event else '' }}" required>
+            <input type="text" id="title" name="title" value="{{ form.title.data if event else '' }}" required>
 
             <label for="date">Event Date:</label>
-            <input type="date" id="date" name="date" value="{{ event.date.strftime('%Y-%m-%d') if event else '' }}" required>
-
-            <label for="time">Event Time:</label>
-            <input type="time" id="time" name="time" value="{{ event.time.strftime('%H:%M') if event else '' }}" required>
+            <input type="date" id="date" name="date" value="{{ form.date.strftime('%Y-%m-%d') if event else '' }}" required>
 
             <label for="location">Event Location:</label>
-            <input type="text" id="location" name="location" value="{{ event.location if event else '' }}" required>
+            <input type="text" id="location" name="location" value="{{ form.location.data if event else '' }}" required>
 
             <label for="description">Event Description:</label>
-            <textarea id="description" name="description" required>{{ event.description if event else '' }}</textarea>
+            <textarea id="description" name="description" required>{{ form.description.data if event else '' }}</textarea>
 
             <button type="submit">Submit</button>
         </form>
     </section>
 
     <footer>
-        <a href="{{ url_for('index') }}">Back to Home</a>
+        <a href="{{ url_for('main.index') }}">Back to Home</a>
     </footer>
 
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>

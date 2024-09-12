@@ -1,7 +1,10 @@
-/* styles.css */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
+/* General Body Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,59 +13,90 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    color: #f4f4f4; /* Light text color for readability on dark background */
 }
 
+/* Header Styling */
 header {
-    padding: 8rem;
+    padding: 6rem 2rem;
     text-align: center;
-    color: white;
+    color: #f4f4f4;
+    background: rgba(0, 0, 0, 0.5); /* Slightly darkened background for contrast */
+    border-bottom: 2px solid #4CAF50; /* Green border to match buttons */
 }
 
 header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem; /* font size for the title */
     margin: 0;
+    font-weight: 700;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 1rem 0 0;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 10px;
+    margin-right: 20px; /* spacing between navigation items */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #f4f4f4;
+    font-weight: 600; 
+    font-size: 1.2rem; /* font size for navigation links */
 }
 
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Section Styling */
 section {
-    padding: 1rem;
+    padding: 2rem;
 }
 
+/* Event List Styling */
 .event-list ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .event-list ul li {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
+
+.event-list ul li a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: 500;
+    font-size: 1.2rem;}
+
+.event-list ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Authentication Container Styling */
 .auth-container {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 10px;
     width: 100%;
     max-width: 400px;
-    margin: 100px auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 4rem auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
 h2 {
-    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    color: #333;
 }
 
 form {
@@ -72,35 +106,35 @@ form {
 
 label {
     margin-bottom: 0.5rem;
-    font-weight: bold;
+    font-weight: 600;
+    color: #333;
 }
 
 input {
-    padding: 0.5rem;
+    padding: 0.75rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 button {
-    padding: 0.7rem;
+    padding: 0.75rem;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-p {
-    margin-top: 1rem;
-}
-
+/* Link Styling */
 a {
-    color: #007BFF;
+    color: #4CAF50;
     text-decoration: none;
 }
 
@@ -108,12 +142,19 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Footer Styling */
 footer {
     padding: 1rem;
     text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 2px solid #4CAF50;
 }
 
 footer a {
     text-decoration: none;
-    color: white;
+    color: #f4f4f4;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
