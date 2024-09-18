@@ -3,36 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events List</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Event List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='events.css') }}">
 </head>
 <body>
     <header>
-        <h1>Events List</h1>
+        <h1>Event List</h1>
     </header>
-
-    <section class="search">
-        <form action="{{ url_for('event_list') }}" method="get">
-            <input type="text" name="search" placeholder="Search events..." value="{{ request.args.get('search', '') }}">
-            <button type="submit">Search</button>
-        </form>
-    </section>
 
     <section class="event-list">
         <ul>
             {% for event in events %}
                 <li>
-                    <a href="{{ url_for('event_detail', event_id=event.id) }}">{{ event.title }}</a>
-                    <p>{{ event.date.strftime('%B %d, %Y') }}</p>
+                    <h2><a href="{{ url_for('events.get_event_form', event_id=event.id) }}">{{ event.title }}</a></h2>
+                    <p>Date: {{ event.date.strftime('%B %d, %Y') }}</p>
+                    <p>Location: {{ event.location }}</p>
                 </li>
-            {% empty %}
+            {% else %}
                 <li>No events found.</li>
             {% endfor %}
         </ul>
+
+        <a href="{{ url_for('events.create_event_form') }}">Create New Event</a>
     </section>
 
     <footer>
-        <a href="{{ url_for('index') }}">Back to Home</a>
+        <a href="{{ url_for('main.index') }}">Back to Home</a>
     </footer>
 
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>

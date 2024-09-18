@@ -1,7 +1,7 @@
 import os
 
 class Config(object):
-    """ Parent configuration."""
+    """ Parent configuration with common settings."""
     SECRET_KEY = os.getenv('SECRET_KEY', 'your_default_secret_key')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -15,11 +15,13 @@ class TestingConfig(Config):
     TESTING = True
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.getenv('TEST_DATABASE_URI', 'sqlite3:///test_db.sqlite')
-    WTF_CSRF_ENABLED = False
+    WTF_CSRF_ENABLED = False #Disable CRSF for testing
 
 class ProductionConfig(Config):
+    """ Production configuration with a different database URI. """
     SQLALCHEMY_DATABASE_URI = os.getenv('PROD_DATABASE_URI', 'sqlite:///prod_db.sqlite')
 
+# Configuration options
 config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,

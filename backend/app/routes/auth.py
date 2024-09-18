@@ -1,3 +1,6 @@
+"""
+Authentication Routes Moodule
+"""
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager
 from flask_login import login_user, logout_user, login_required
@@ -8,6 +11,7 @@ auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
+    """ Handle user registration. """
     if request.method == 'POST':
         username = request.form['username']
         email = request.form['email']

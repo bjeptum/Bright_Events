@@ -8,17 +8,17 @@
 </head>
 <body>
     <header>
-        <h1>Bright Events </h1>
+        <h1>Bright Events</h1>
         <nav>
             <ul>
-                <li><a href="{{ url_for('events.list_events') }}">Events</a></li>
-                <li><a href="{{ url_for('main.create_event') }}">Create Event</a></li>
+                <li><a href="{{ url_for('events.list_events_form') }}">Events</a></li>
+                <li><a href="{{ url_for('events.create_event_form') }}">Create Event</a></li>
             </ul>
         </nav>
     </header>
 
     <footer>
-        <a href="{{ url_for('events.list_events') }}">View Events</a>
+        <a href="{{ url_for('events.list_events_form') }}">View Events</a>
     </footer>
 
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>

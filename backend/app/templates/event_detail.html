@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ event.title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='details.css') }}">
 </head>
 <body>
     <header>
         <h1>{{ event.title }}</h1>
-        <p>{{ event.date.strftime('%B %d, %Y') }} at {{ event.time.strftime('%I:%M %p') }}</p>
+        <p>{{ event.date.strftime('%B %d, %Y') }} at {{ event.date.strftime('%I:%M %p') }}</p>
     </header>
     
     <section class="event-details">
@@ -21,20 +21,26 @@
         <ul>
             {% for rsvp in event.rsvps %}
                 <li>{{ rsvp.user.username }} - {{ rsvp.created_at.strftime('%B %d, %Y %I:%M %p') }}</li>
-            {% empty %}
+            {% else %}
                 <li>No RSVPs yet.</li>
             {% endfor %}
         </ul>
         
         <h3>RSVP</h3>
-        <form action="{{ url_for('rsvp', event_id=event.id) }}" method="post">
+        <form action="{{ url_for('events.rsvp_event_form', event_id=event.id) }}" method="post">
             <input type="hidden" name="_method" value="POST">
             <button type="submit">RSVP</button>
         </form>
+
+        <h3>Actions</h3>
+        <form action="{{ url_for('events.delete_event_form', event_id=event.id) }}" method="post">
+            <button type="submit">Delete Event</button>
+        </form>
+        <a href="{{ url_for('events.edit_event_form', event_id=event.id) }}">Edit Event</a>
     </section>
 
     <footer>
-        <a href="{{ url_for('index') }}">Back to Home</a>
+        <a href="{{ url_for('main.index') }}">Back to Home</a>
     </footer>
 
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>

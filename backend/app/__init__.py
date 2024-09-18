@@ -1,5 +1,5 @@
 """
-Blueprint module
+Flask Application Initialization Module
 """
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -12,7 +12,7 @@ migrate = Migrate()
 login_manager = LoginManager()
 
 def create_app(config_name='default'):
-    """ Initialize Flask app"""
+    """ Initialize Flask app with config and extensions"""
     app = Flask(__name__)
     app.config.from_object(config[config_name])
 
@@ -37,5 +37,6 @@ def create_app(config_name='default'):
 # Define the user loader callback
 @login_manager.user_loader
 def load_user(user_id):
+    """ Load a user from db using their ID. """
     from .models import User
     return User.query.get(int(user_id))

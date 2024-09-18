@@ -10,7 +10,7 @@ from app import db
 # db = SQLAlchemy()
 
 class User(db.Model,UserMixin):
-    """ Defines users"""
+    """ User model representing application users"""
     __tablename__ = 'users'
     
     id = db.Column(db.Integer, primary_key=True)
@@ -21,13 +21,16 @@ class User(db.Model,UserMixin):
     attendee = db.relationship('Attendee', backref='users', uselist=False)
 
     def set_password(self, password):
+        """ Set the user's password after hashing it"""
         self.password_hash = generate_password_hash(password)
 
     def check_password(self, password):
+        """ Check if the provided password matches the hashed password. """
         return check_password_hash(self.password_hash, password)
 
 
 class Organizer(db.Model):
+    """ Model representing event organizers. """
     __tablename__ = 'organizers'
     
     id = db.Column(db.Integer, primary_key=True)
@@ -36,6 +39,7 @@ class Organizer(db.Model):
 
 
 class Attendee(db.Model):
+    """ Model representing event attendee. """
     __tablename__ = 'attendees'
     
     id = db.Column(db.Integer, primary_key=True)
@@ -44,27 +48,31 @@ class Attendee(db.Model):
 
 
 class Event(db.Model):
+    """ Model representing events. """
     __tablename__ = 'events'
     
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
-    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
     location = db.Column(db.String(100), nullable=False)
-    category_id = db.Column(db.Integer, db.ForeignKey('event_categories.id'), nullable=False)
+    #category_id = db.Column(db.Integer, db.ForeignKey('event_categories.id'), nullable=False)
     organizer_id = db.Column(db.Integer, db.ForeignKey('organizers.id'), nullable=False)
+    description = db.Column(db.String, nullable=False)
     rsvps = db.relationship('RSVP', backref='events', lazy=True)
-    category = db.relationship('EventCategory', backref='events')
+    #category = db.relationship('EventCategory', backref='events')
 
 
+"""
 class EventCategory(db.Model):
     __tablename__ = 'event_categories'
     
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True, nullable=False)
     description = db.Column(db.String(200))
-
+"""
 
 class RSVP(db.Model):
+    """ Model representing RSVPs for events. """
     __tablename__ = 'rsvps'
     
     id = db.Column(db.Integer, primary_key=True)

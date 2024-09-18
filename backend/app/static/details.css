@@ -1,0 +1,106 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("/static/images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #f4f4f4; /* Light text color for readability on dark background */
+}
+
+/* Header Styling */
+header {
+    padding: 6rem 2rem;
+    text-align: center;
+    color: #f4f4f4;
+    background: rgba(0, 0, 0, 0.5); /* Slightly darkened background for contrast */
+    border-bottom: 2px solid #4CAF50; /* Green border to match buttons */
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem; /* font size for the title */
+    margin: 0;
+    font-weight: 700;
+}
+
+header p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+/* Event Details Section */
+.event-details {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.event-details h2, .event-details h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #f4f4f4; /* Light text color to match the page */
+}
+
+.event-details p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #f4f4f4; /* Light text color to match the page */
+}
+
+.event-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.event-details ul li {
+    margin-bottom: 1rem;
+}
+
+/* RSVP Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1rem; /* Space between the list and the button */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Footer Styling */
+footer {
+    padding: 1rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 2px solid #4CAF50;
+}
+
+footer a {
+    text-decoration: none;
+    color: #f4f4f4;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
