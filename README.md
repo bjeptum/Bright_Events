@@ -32,19 +32,24 @@ The project is not deployed butcan be used locally following the below steps:
     #### Ubuntu Terminal:
 
 1.  Clone the repository
+
 `
     git clone git@github.com:bjeptum/Bright_Events.git
     `
+    
 2. Navigate to the project directory 
+
 `
     cd Bright_Events/backend
     `
+    
 3. Setup a virtual environment
    
 `
     python3 -m venv myenv
     source myenv/bin/activate
     `
+
     
     /* Note: to deactivate the environment type deactivate */
    
@@ -53,6 +58,7 @@ The project is not deployed butcan be used locally following the below steps:
    `
    pip install -r requirements.txt
    `
+   
 5. Set Up Environment Variables
 
    - Create a .env file in the root directory
@@ -68,7 +74,7 @@ The project is not deployed butcan be used locally following the below steps:
 6. Run the Flask application
    
  `
- python3 -m flask run.py
+ python3 run.py
  `
  
 7. Navigate to your web browser and have at it
