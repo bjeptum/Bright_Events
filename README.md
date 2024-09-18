@@ -39,7 +39,7 @@ The project is entirely for educational purposes with no intention to release it
 4. Install dependencies
 
    `
-   pip install -r requirements.txt
+   pip install -r Bright_Events/backend/requirements.txt
    `
 5. Set Up Environment Variables
 
