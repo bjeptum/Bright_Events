@@ -6,17 +6,19 @@ Bright Events is a platform for event organizers to create and manage different 
 
 ### The Context
 
-Completion of the same has contributed greatly to my learning towards becoming a software engineer as a portfolio project,concluding my [ALX -Software Engineering Foundations](https://www.alxafrica.com/learn/programming-development/)
+Completion of the same has contributed greatly to my learning towards becoming a software engineer as a portfolio project,concluding my [ALX -Software Engineering Foundations](https://www.alxafrica.com/learn/programming-development/).
 
 ### The Team
+
 I worked on this project solely.
 Follow me on [LinkedIn](https://www.linkedin.com/in/brenda-jeptum-8bab79120/)
 
 ### Usage
 
-The project is entirely for educational purposes with no intention to release it for use by the public. However, in an ideal scenario, it would be used by event organizers as well as attendees  to have a one stop for registration and managing the logistics of an  event/events. Bright events is open to be used in any locality.
+The project is entirely for educational purposes with no intention to release it for use by the public. However, in an ideal scenario, it would be used by event organizers as well as attendees  to have a one stop for registration and managing the logistics of an  event/events. Bright Events is open to be used in any locality.
 
 ### Product Features
+
 - Users can create an account and log in
 - Users can create, view, update and delete an event
 - Users can RSVP to an event
@@ -24,6 +26,7 @@ The project is entirely for educational purposes with no intention to release it
 - Users can search for events based on event location or event category
 
 ## Installation
+
 The project is not deployed butcan be used locally following the below steps:
 
     #### Ubuntu Terminal:
@@ -70,7 +73,8 @@ The project is not deployed butcan be used locally following the below steps:
  python3 -m flask run
  `
  
-8. Navigate to your web browser and have at it 
+8. Navigate to your web browser and have at it
+9. 
 `
 http://127.0.0.1:5000/
 `
@@ -78,9 +82,22 @@ http://127.0.0.1:5000/
 ### Blog Post
 
 Upon completion of the development phase of Bright Event, I wrote a blog post of my experience.
+
 [........](...)
 
 
 ### Contribution 
 
-Jeptum Brenda is the only contributorat this time 
+Jeptum Brenda is the only contributor at this time.
+
+### Related Projects
+
+- [Alprojectdesign](https://www.alprojectsdesign.com/en/home/)
+- [Waridi Events](https://www.waridievents.com/)
+
+
+### Licensing
+
+Totally free but give me credit.
+
+
