@@ -40,10 +40,12 @@ The project is not deployed butcan be used locally following the below steps:
     cd Bright_Events/backend
     `
 3. Setup a virtual environment
+   
 `
     python3 -m venv myenv
     source myenv/bin/activate
     `
+    
     /* Note: to deactivate the environment type deactivate */
    
 4. Install dependencies
@@ -63,18 +65,14 @@ The project is not deployed butcan be used locally following the below steps:
   SECRET_KEY=your_secret_key
   `
   
-6. Initialize the database
-
-  `python3 -m flask shell`
-  
-7. Run the Flask application
+6. Run the Flask application
    
  `
- python3 -m flask run
+ python3 -m flask run.py
  `
  
-8. Navigate to your web browser and have at it
-9. 
+7. Navigate to your web browser and have at it
+ 
 `
 http://127.0.0.1:5000/
 `
