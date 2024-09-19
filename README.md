@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Bright Events is a platform for event organizers to create and manage different types of events.
+Bright Events is a web platform for event organizers to create and manage different types of events.
 
 ### The Context
 
@@ -25,7 +25,6 @@ The project is entirely for educational purposes with no intention to release it
 - Users can create, view, update and delete an event
 - Users can RSVP to an event
 - Users can view who will be attending their event
-- Users can search for events based on event location or event category
 
 ## Installation
 
@@ -84,13 +83,6 @@ The project is not deployed butcan be used locally following the below steps:
 `
 http://127.0.0.1:5000/
 `
-
-### Blog Post
-
-Upon completion of the development phase of Bright Event, I wrote a blog post of my experience.
-
-[........](...)
-
 
 ### Contribution 
 
