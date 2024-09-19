@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bright Events</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
@@ -16,53 +16,6 @@
             </ul>
         </nav>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <img src="{{ url_for('static', filename='images/background-image.jpg') }}" alt="Hero Background" class="hero-background">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1>Your Event, Their Experience. Unleash the Potential</h1>
-            <p>Manage and promote your events with ease - from small gatherings to large conferences - all in one place.</p>
-            <div class="cta">
-                <input type="email" placeholder="youremail@example.com">
-                <button>Launch Your First Event Now!</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <h2>Your audience is waiting. Let's make your event a success</h2>
-        <p>Our platform helps you design memorable events, streamline planning, and connect with your audience effortlessly.</p>
-        <div class="feature-cards">
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="Effortless Event Creation">
-                <h3>Effortless Event Creation</h3>
-                <p>Plan and Launch Events in minutes</p>
-            </div>
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/feature2.jpg') }}" alt="Advanced Analytics">
-                <h3>Advanced Analytics</h3>
-                <p>Track event performance and audience engagement.</p>
-            </div>
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/feature3.jpg') }}" alt="Customizable Event Pages">
-                <h3>Customizable Event Pages</h3>
-                <p>Tailored events for your brand and audience.</p>
-            </div>
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/feature4.jpg') }}" alt="Instant RSVPs & Notifications">
-                <h3>Instant RSVPs & Notifications</h3>
-                <p>Stay connected with your Attendees</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bottom Section -->
-    <section class="cta-bottom">
-        <p>Copyright © BrightEvents 2024.</p>
-    </section>
 
     <footer>
         <a href="{{ url_for('events.list_events_form') }}">View Events</a>
