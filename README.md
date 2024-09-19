@@ -14,7 +14,9 @@ The journey began with the motivation of building an application on my own from 
 ### 👩‍💻 The Team
 
 This project is a solo endeavor.
-In case you like the app or would like to collaborate in improving it,let's connect on [LinkedIn](https://www.linkedin.com/in/brenda-jeptum-8bab79120/)
+In case you like the app or would like to collaborate in improving it, let's connect on:
+[LinkedIn](https://www.linkedin.com/in/brenda-jeptum-8bab79120/)
+[Twitter](https://x.com/BJeptum)
 
 ### 🛠️ Usage
 
