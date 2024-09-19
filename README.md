@@ -6,7 +6,9 @@ Bright Events is a platform for event organizers to create and manage different 
 
 ### The Context
 
-Completion of the same has contributed greatly to my learning towards becoming a software engineer as a portfolio project,concluding my [ALX -Software Engineering Foundations](https://www.alxafrica.com/learn/programming-development/).
+As a mom, I often find myself juggling the demands of family life while trying to plan events-be it a birthday party, family-get-together and community events. I realized how hard it can be from managing RSVPs, scheduling the events and ensuring you never miss out the nitty gritties,this inspired me to build Bright Events.
+
+The journey began with the motivation of finally building an application on my own from scratch. My goal was centered on being able to complete the application for my learning towards becoming a software engineer for the [ALX -Software Engineering Foundations](https://www.alxafrica.com/learn/programming-development/) program.
 
 ### The Team
 
