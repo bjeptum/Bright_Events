@@ -13,29 +13,38 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: #f4f4f4; /* Light text color for readability on dark background */
+    color: #e0e0e0;
 }
 
 /* Header Styling */
 header {
     padding: 6rem 2rem;
     text-align: center;
-    color: #f4f4f4;
-    background: rgba(0, 0, 0, 0.5); /* Slightly darkened background for contrast */
-    border-bottom: 2px solid #4CAF50; /* Green border to match buttons */
+    color: #e0e0e0;
+    background: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #f39c12;
 }
 
 header h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem; /* font size for the title */
+    font-size: 4rem; /* Title size */
     margin: 0;
     font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-header p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    margin: 0.5rem 0;
+.flashes {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.flashes li {
+    background-color: rgba(0, 0, 0, 0.8); /* Background for flash messages */
+    color: #f39c12; /* Text color for visibility */
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
 }
 
 /* Event Details Section */
@@ -43,17 +52,20 @@ header p {
     padding: 2rem;
     margin: 2rem auto;
     max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for event details */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .event-details h2, .event-details h3 {
     font-family: 'Montserrat', sans-serif;
-    color: #f4f4f4; /* Light text color to match the page */
+    color: #f39c12;
 }
 
 .event-details p {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
-    color: #f4f4f4; /* Light text color to match the page */
+    color: #e0e0e0;
 }
 
 .event-details ul {
@@ -74,33 +86,43 @@ form {
 
 button {
     padding: 0.75rem;
-    background-color: #4CAF50;
+    background-color: #f39c12;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
-    margin-top: 1rem; /* Space between the list and the button */
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #e08e0b;
+}
+
+/* Edit Event Link Styling */
+.event-details a {
+    color: #f39c12;
+    text-decoration: underline; /* Underline the link */
+}
+
+.event-details a:hover {
+    text-decoration: none; /* Remove underline on hover */
 }
 
 /* Footer Styling */
 footer {
     padding: 1rem;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    border-top: 2px solid #4CAF50;
+    background: rgba(0, 0, 0, 0.7);
+    border-top: 2px solid #f39c12;
 }
 
 footer a {
     text-decoration: none;
-    color: #f4f4f4;
+    color: #e0e0e0;
 }
 
 footer a:hover {
     text-decoration: underline;
+    color:#f39c12;
 }

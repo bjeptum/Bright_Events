@@ -12,12 +12,9 @@
     </header>
 
     <section class="event-form">
-        <form action="{{ url_for('events.create_event_form') }}" method="post">
+        <form action="{{ url_for('events.edit_event_form', event_id=event.id) if event else url_for('events.create_event_form') }}" method="post">
             {{ form.hidden_tag() }}
-
-
-
-
+            
             <label for="title">Event Title:</label>
             <input type="text" id="title" name="title" value="{{ form.title.data if event else '' }}" required>
 
@@ -30,7 +27,7 @@
             <label for="description">Event Description:</label>
             <textarea id="description" name="description" required>{{ form.description.data if event else '' }}</textarea>
 
-            <button type="submit">Submit</button>
+            <button type="submit">{{ 'Create Event' if not event else 'Update Event' }}</button>
         </form>
     </section>
 

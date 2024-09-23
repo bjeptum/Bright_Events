@@ -22,7 +22,7 @@ def create_event_form():
             date=form.date.data,
             location=form.location.data,
             description=form.description.data,
-            # category_id=form.category.data, # Uncomment when category field is availabl
+            # category_id=form.category.data, # Uncomment when category field is available
             organizer_id=current_user.id # Associate the event with current user
         )
         db.session.add(event)
@@ -36,22 +36,23 @@ def create_event_form():
 def edit_event_form(event_id):
     """Edit an existing event"""
     event = Event.query.get_or_404(event_id)
-    # Check if the current user is the organier of the event
+    # Check if the current user is the organzer of the event
     if event.organizer_id != current_user.id:
         flash('Not authorized')
         return redirect(url_for('events.list_events_form'))
 
     form = EventForm(obj=event)
-    if form.validate_on_submit():
-        event.title = form.title.data
-        event.date = form.date.data
-        event.location = form.location.data
-        event.description = form.description.data
-        # event.category_id = form.category.data # Uncomment when category field is available
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            event.title = form.title.data
+            event.date = form.date.data
+            event.location = form.location.data
+            event.description = form.description.data
+            # event.category_id = form.category.data # Uncomment when category field is available
 
-        db.session.commit()
-        flash('Event updated successfully!')
-        return redirect(url_for('events.get_event_form', event_id=event.id))
+            db.session.commit()
+            flash('Event updated successfully!')
+            return redirect(url_for('events.get_event_form', event_id=event.id))
 
     return render_template('event_form.html', form=form, event=event)
 

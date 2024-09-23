@@ -12,6 +12,17 @@
         <p>{{ event.date.strftime('%B %d, %Y') }} at {{ event.date.strftime('%I:%M %p') }}</p>
     </header>
     
+      <!-- Flash Messages Section -->
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          <ul class="flashes">
+              {% for message in messages %}
+                  <li>{{ message }}</li>
+              {% endfor %}
+          </ul>
+      {% endif %}
+  {% endwith %}
+  
     <section class="event-details">
         <h2>Event Details</h2>
         <p>{{ event.description }}</p>
