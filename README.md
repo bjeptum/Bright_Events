@@ -1,4 +1,6 @@
-## 🌟 Bright Events 
+## 🌟 Bright Events
+
+![Bright Events Home Page](https://github.com/bjeptum/Bright_Events/blob/master/backend/app/static/app_sample1.png)
 
 ### 🎉 Introduction
 
